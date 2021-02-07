@@ -1,0 +1,24 @@
+h1 {
+	color: red;
+	text-align: center;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+span.path {
+	background-color: yellow;
+}
+
+td.box {
+	padding: 2%;
+	width: 50%;
+}
+
+textarea {
+	height: 100%;
+	width: 95%;
+}
+
+a.footer {
+	font-style: italic;
+}
