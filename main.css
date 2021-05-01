@@ -22,3 +22,7 @@ textarea {
 a.footer {
 	font-style: italic;
 }
+
+label.checkbox {
+	border: 1px solid grey;
+}
