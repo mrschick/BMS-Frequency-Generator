@@ -72,9 +72,9 @@
 						{
 							do {
 								$el[$n] = rand(225000, 399750);
-							} while($el[$n] % 25 != 0 || contains($assignedUHF, $el[$n]) || $el[$n] == 243000); // repeat if not a 25kHz step, frequency already used or is GUARD
+							} while($el[$n] % 25 != 0 || in_array($el[$n], $assignedUHF) || $el[$n] == 243000); // repeat if not a 25kHz step, frequency already used or is GUARD
+							array_push($assignedUHF, $el[$n]);
 						}
-						array_push($assignedUHF, $el[$n]);
 					}
 				}
 				else // if the user doesn't care about keeping already assigned ATC frequencies.
@@ -83,7 +83,7 @@
 					{
 						do {
 							$el[$n] = rand(225000, 399750);
-						} while($el[$n] % 25 != 0 || contains($assignedUHF, $el[$n]) || $el[$n] == 243000); // repeat if not a 25kHz step, frequency already used or is GUARD
+						} while($el[$n] % 25 != 0 || in_array($el[$n], $assignedUHF) || $el[$n] == 243000); // repeat if not a 25kHz step, frequency already used or is GUARD
 						array_push($assignedUHF, $el[$n]);
 					}
 				}
@@ -106,18 +106,5 @@
 		}
 
 		return $output;
-	}
-
-	function contains($arr, $n) // if $n is found in $arr, return true
-	{
-		$found = false;
-
-		foreach($arr as $e)
-		{
-			if($e == $n)
-				$found = true;
-		}
-
-		return $found;
 	}
 ?>
